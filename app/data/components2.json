@@ -1,0 +1,233 @@
+{
+
+    "php": {
+        "label": "PHP",
+        "binary": false,
+        "logo": "/images/logos/php.png",
+        "class": "Component",
+        "fields": {
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".: /var/www", "multiple": true},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "php-fpm": {
+        "label": "PHP-FPM",
+        "binary": false,
+        "logo": "/images/logos/php.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "9000: 9000", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".: /var/www", "multiple": true},
+            "modules": {"label": "Modules :", "type": "choices", "choices": ["gd", "apc", "zip"]},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        },
+        "customFields": {
+            "memoryLimit": {"label": "Memory limit :", "type": "text", "default": ""},
+            "maxExecutionTime": {"label": "Max execution time :", "type": "text", "default": ""},
+            "maxInputTime": {"label": "Max input time :", "type": "text", "default": ""},
+            "locale": {"label": "Locale", "type": "text", "default": ""}
+        }
+    },
+    "python": {
+        "label": "Python",
+        "binary": false,
+        "logo": "/images/logos/python.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": "", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        },
+        "customFields": {
+            "pip_modules": {"label": "Pip modules :", "type": "text", "default": "", "multiple": true},
+            "version": {"label": "Python version (x.x.x) :", "type": "text", "default": ""}
+        }
+    },
+    "hhvm": {
+        "label": "HHVM",
+        "binary": false,
+        "logo": "/images/logos/HHVM.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "9000: 9000", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".: /var/www", "multiple": true},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        },
+        "customFields": {
+            "memoryLimit": {"label": "Memory limit :", "type": "text", "default": ""},
+            "maxExecutionTime": {"label": "Max execution time :", "type": "text", "default": ""}
+        }
+    },
+    "nodejs": {
+        "label": "Node.js",
+        "binary": false,
+        "logo": "/images/logos/nodejs.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "80: 80", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".: /app", "multiple": true},
+            "after_script" : {"label": "After script :", "type": "text", "default": "node /app/server.js"},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "cassandra": {
+        "label": "Cassandra",
+        "binary": false,
+        "logo": "/images/logos/cassandra.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "9160: 9160, 7000: 7000", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".gaudi/cassandra: /var/log/cassandra", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        },
+        "customFields": {
+            "maxHeapSize": {"label": "MaxHeapSize :", "type": "text", "default": "512M"},
+            "heapNewSize": {"label": "HeapNewSize :", "type": "text", "default": "128M"}
+        }
+    },
+    "golang": {
+        "label": "Go",
+        "binary": false,
+        "logo": "/images/logos/go.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": "", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        },
+        "customFields": {
+            "modules": {"label": "Go modules :", "type": "text", "default": "", "multiple": true},
+            "version": {"label": "Go version (x.x) :", "type": "text", "default": ""}
+        }
+    },
+    "jackrabbit": {
+        "label": "Jackrabbit",
+        "binary": false,
+        "logo": "/images/logos/jackrabbit.gif",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "8080: 8080", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".gaudi/jackrabbit: /opt/jackrabbit/jackrabbit", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": "", "renderEmpty": false},
+            "after_script" : {"label": "After script :", "type": "text", "default": "", "renderEmpty": false},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "phpmyadmin": {
+        "label": "phpMyAdmin",
+        "binary": false,
+        "logo": "/images/logos/phpmyadmin.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "80: 80", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": "", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "django": {
+        "label": "Django",
+        "binary": false,
+        "logo": "/images/logos/django.png",
+        "class": "Component",
+        "fields": {
+            "ports" : {"label": "Ports :", "type": "text", "default": "80: 80", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": ".: /app", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": "sleep 5 && python /app/manage.py syncdb --noinput && echo \"from django.contrib.auth.models import User; User.objects.create_superuser(\\\"root\\\", \\\"root@myapp.com\\\", \\\"root\\\")\" | python /app/manage.py shell"},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        },
+        "customFields": {
+            "pip_modules": {"label": "Pip modules :", "type": "text", "default": "", "multiple": true},
+            "project_name": {"label": "Project name :", "type": "text", "default": ""},
+            "app_name": {"label": "Application name :", "type": "text", "default": ""}
+        }
+    },
+    "index": {
+        "label": "Docker index",
+        "binary": false,
+        "logo": "/images/logos/docker.jpg",
+        "class": "Component",
+        "fields": {
+            "image" : {"label": "Image :", "type": "text", "default": "", "multiple": false},
+            "ports" : {"label": "Ports :", "type": "text", "default": "80: 80", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": "", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "github": {
+        "label": "Github image",
+        "binary": false,
+        "logo": "/images/logos/github.jpg",
+        "class": "Component",
+        "fields": {
+            "image" : {"label": "Image :", "type": "text", "default": "", "multiple": false},
+            "path" : {"label": "Path :", "type": "text", "default": "github.com/...", "multiple": false},
+            "ports" : {"label": "Ports :", "type": "text", "default": "80: 80", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": "", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "custom": {
+        "label": "Custom image",
+        "binary": false,
+        "logo": "/images/logos/custom.jpg",
+        "class": "Component",
+        "fields": {
+            "template" : {"label": "Template path :", "type": "text", "default": "", "multiple": false},
+            "ports" : {"label": "Ports :", "type": "text", "default": "80: 80", "multiple": true},
+            "volumes" : {"label": "Volumes :", "type": "text", "default": "", "multiple": true},
+            "before_script" : {"label": "Before script :", "type": "text", "default": ""},
+            "after_script" : {"label": "After script :", "type": "text", "default": ""},
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "bower": {
+        "label": "Bower",
+        "binary": true,
+        "logo": "/images/logos/bower.png",
+        "class": "Component",
+        "fields": {
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "composer": {
+        "label": "Composer",
+        "binary": true,
+        "logo": "/images/logos/composer.png",
+        "class": "Component",
+        "fields": {
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "jekyll": {
+        "label": "Jekyll",
+        "binary": true,
+        "logo": "/images/logos/jekyll.png",
+        "class": "Component",
+        "fields": {
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    },
+    "npm": {
+        "label": "Npm",
+        "binary": true,
+        "logo": "/images/logos/npm.png",
+        "class": "Component",
+        "fields": {
+            "apt_get": {"label": "Apt packets :", "type": "text", "default": "", "array": true}
+        }
+    }
+}

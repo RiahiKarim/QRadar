@@ -1,0 +1,28 @@
+{
+  "name": "qradar",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "bootstrap": "^3.2.0",
+    "angular-animate": "^1.4.0",
+    "angular-route": "^1.4.0",
+    "yamljs": "^0.1.5",
+    "underscore": "^1.8.3",
+    "angular-bootstrap": "^1.3.2",
+    "jointjs": "joint#^0.9.7"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.0"
+  },
+  "appPath": "app",
+  "moduleName": "qradarApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

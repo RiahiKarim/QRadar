@@ -1,0 +1,11 @@
+<div class="container-fluid editor" ng-app="qradarBuilder" >
+  <div class="row content">
+    <div class="col-md-3 sidebar">
+      <div class="componentsContainer" ng-controller="componentsCtrl" ng-include="'views/components.html'"></div>
+      <div id="result" ng-controller="yamlCtrl" ng-include="'views/yaml.html'"></div>
+    </div>
+    <div id="board" class="col-md-9" ng-controller="boardCtrl">
+      <joint-diagram graph="graph" width="100" height="100" grid-size="1" drop="handleDrop"/>
+    </div>
+  </div>
+</div>

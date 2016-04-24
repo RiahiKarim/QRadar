@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/jointjs/dist/joint.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="qradarApp">
+
+<!-- Add your site or application content here -->
+<div ng-view=""></div>
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="bower_components/graphlib/dist/graphlib.core.js"></script>
+<script src="bower_components/dagre/dist/dagre.core.js"></script>
+<script src="bower_components/dagre/dist/dagre.core.min.js"></script>
+<script src="bower_components/jointjs/dist/joint.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="bower_components/yamljs/bin/yaml.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/components.js"></script>
+<script src="scripts/controllers/board.js"></script>
+<script src="scripts/controllers/editComponent.js"></script>
+<script src="scripts/controllers/yaml.js"></script>
+<script src="scripts/directives/draggable.js"></script>
+<script src="scripts/directives/droppable.js"></script>
+<script src="scripts/directives/jointDiagram.js"></script>
+<script src="scripts/services/componentFetcher.js"></script>
+<script src="scripts/services/componentFactory.js"></script>
+<script src="scripts/services/selectedComponents.js"></script>
+<script src="scripts/services/yamlParser.js"></script>
+<script src="scripts/jointjs/element.js"></script>
+<!-- endbuild -->
+</body>
+</html>
